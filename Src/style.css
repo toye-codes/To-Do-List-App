@@ -1,83 +1,163 @@
-*{
+* {
     padding: 0;
     border: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #e6f2ff;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
-.main{
+.main {
     margin-top: 50px;
     box-sizing: border-box;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.header{
+.header {
     text-align: center;
     color: #0080ff;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-.date{
+.date {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-.date h3{
-    font-size: 30px;
-    margin-left: 50px;
+.date h3 {
+    font-size: 24px;
+    margin: 0;
 }
 
 #tasks {
-    font-size: 20px;
-    margin-right: 50px;
-    margin-top: 15px;
+    font-size: 18px;
     color: #1a8cff;
 }
 
-.task{
-    display: block;
-    margin-left: 30px;
+.task {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 0 20px;
 }
 
-.task-item{
+.task-item {
     display: flex;
-    justify-items: center;
-    padding: 5px;
-    font-size: 20px;
-    font-weight: 'bold';
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-item p {
+    margin-left: 10px;
 }
 
 #addTask {
     font-size: 50px;
-    font-weight: 500; 
+    font-weight: 500;
     text-align: right;
-    margin-right: 90px;
-    margin-top: -85px;
+    margin: 20px 0;
 }
 
 #addTask p {
     border: thin solid #005ce6;
     border-radius: 100%;
     background-color: #005ce6;
-    color: white; 
-    width: 50px; 
+    color: white;
+    width: 50px;
     height: 50px;
-    display: inline-block; 
+    display: inline-block;
     text-align: center;
     line-height: 50px;
-    padding: 1px;
     cursor: pointer;
 }
 
-#addTask p:hover{
+#addTask p:hover {
     background-color: #ffffff;
     color: #005ce6;
-    
+}
+
+/* .cancel is now aligned */
+.cancel {
+    cursor: pointer;
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+
+    .date {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date h3 {
+        font-size: 20px;
+    }
+
+    #tasks {
+        font-size: 16px;
+    }
+
+    .task-item {
+        font-size: 16px;
+    }
+
+    #addTask p {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    .cancel {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .date h3 {
+        font-size: 18px;
+    }
+
+    #tasks {
+        font-size: 14px;
+    }
+
+    .task-item {
+        font-size: 14px;
+    }
+
+    #addTask p {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 25px;
+    }
+
+    .cancel {
+        font-size: 18px;
+    }
 }
